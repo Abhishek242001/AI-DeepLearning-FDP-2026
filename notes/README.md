@@ -240,7 +240,7 @@ Load → Decode → Normalize `[0,1]` → **Augment** (train only: horizontal/ve
 
 ## ⚡ Session 3: Deep Learning Applications for Resource Optimization
 
-**Slide deck:** [`Deep Learning Applications for Resource Optimization.pptx`](../slides/Deep%20Learning%20Applications%20for%20Resource%20Optimization.pptx) · **58 slides**
+**Slide deck (PDF):** [`Deep Learning Applications for Resource Optimization.pdf`](../lecture%20material/Slides-PDF/Deep%20Learning%20Applications%20for%20Resource%20Optimization.pdf) · **58 slides**
 **Notebook:** [`Deep_Learning_Resource_Optimization_Workshop.ipynb`](../code/deep_learning_resource_optimization/Deep_Learning_Resource_Optimization_Workshop.ipynb) · **45 cells**
 
 ### 🎯 What This Session Covers
@@ -347,7 +347,7 @@ Senior AI Developer, UniConverge Technologies Pvt. Ltd.
 
 1. Start with the **session notes above** for a fast conceptual overview of each topic.
 2. Open the matching notebook in `code/` to run the hands-on exercises yourself (Google Colab with a GPU runtime is recommended for Sessions 2 & 3).
-3. Refer to the original slide decks in `slides/` for the full visual explanations, diagrams, and speaker notes.
+3. Refer to the PDF slide decks in `lecture material/Slides-PDF/` for the complete visual explanations, diagrams, and speaker notes.
 4. See [`resources/README.md`](../resources/README.md) for supporting research papers on AI in remote sensing.
 
 *Compiled for the FDP on Integrating AI and IoT for Sustainable Resource Management — IIT Guwahati (EICT Academy) × NIT Nagaland, 27–31 July 2026.*
