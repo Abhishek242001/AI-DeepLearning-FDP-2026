@@ -88,7 +88,6 @@ AI-DeepLearning-FDP-2026/
 
 ## Contact
 
-**Abhishek Kumar Shukla**
 📧 Personal: [abhishekshukla2421@gmail.com](mailto:abhishekshukla2421@gmail.com)
 🏢 Work: [abhishek.shukla@uniconvergetech.in](mailto:abhishek.shukla@uniconvergetech.in)
 💼 [LinkedIn](https://www.linkedin.com/in/researcher-abhishek-kumar-shukla/)
