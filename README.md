@@ -9,6 +9,10 @@
 **27–31 July 2026 | Electronics & ICT Academy, IIT Guwahati**
 *In association with National Institute of Technology Nagaland, Chumoukedima*
 
+<br>
+
+<img src="assets/Poster.png" alt="FDP Poster" width="600">
+
 </div>
 
 ---
@@ -66,6 +70,12 @@ AI-DeepLearning-FDP-2026/
 - **[`notes/README.md`](notes/README.md)** — In-depth written notes covering every session, topic by topic.
 - **[`resources/README.md`](resources/README.md)** — Curated external research papers on AI in remote sensing.
 
+## 🎥 Video Walkthroughs & Audio Explainer
+
+Prefer watching or listening over reading slides? Every session has an AI-generated video walkthrough, and Session 1 also has a standalone audio explainer.
+
+📺 **[Browse all videos & audio →](slides/README.md)**
+
 ## Getting Started
 
 1. Clone this repository:
@@ -88,11 +98,9 @@ AI-DeepLearning-FDP-2026/
 
 ## Contact
 
-📧 Personal: [abhishekshukla2421@gmail.com](mailto:abhishekshukla2421@gmail.com)
-🏢 Work: [abhishek.shukla@uniconvergetech.in](mailto:abhishek.shukla@uniconvergetech.in)
-💼 [LinkedIn](https://www.linkedin.com/in/researcher-abhishek-kumar-shukla/)
-🎓 [Google Scholar](https://scholar.google.com/citations?user=e3AeGHAAAAAJ&hl=en)
-🆔 [ORCID](https://orcid.org/0009-0002-3415-2718)
+**Abhishek Kumar Shukla**
+📧 Personal: [abhishekshukla2421@gmail.com](mailto:abhishekshukla2421@gmail.com) · 🏢 Work: [abhishek.shukla@uniconvergetech.in](mailto:abhishek.shukla@uniconvergetech.in)
+💼 [LinkedIn](https://www.linkedin.com/in/researcher-abhishek-kumar-shukla/) · 🎓 [Google Scholar](https://scholar.google.com/citations?user=e3AeGHAAAAAJ&hl=en) · 🆔 [ORCID](https://orcid.org/0009-0002-3415-2718)
 
 ---
 *These materials are shared for academic and educational use by FDP participants.*
