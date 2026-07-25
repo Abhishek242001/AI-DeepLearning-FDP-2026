@@ -54,18 +54,24 @@ This repository contains presentation slides, hands-on code notebooks, detailed 
 ```
 AI-DeepLearning-FDP-2026/
 ├── README.md
-├── assets/                  → Profile photo & institutional logos
-├── slides/                  → All 3 presentation decks (.pptx)
+├── LICENSE
+├── assets/                          → Profile photo, institutional logos & poster
+├── lecture material/
+│   ├── README.md                    → Links to all slides, videos & audio
+│   ├── Slides-PDF/                  → All 3 decks as PDF (quick browser viewing)
+│   ├── Slides-PPTX/                 → All 3 decks as PPTX (editable)
+│   ├── Video Explanation/           → AI-generated video walkthroughs
+│   └── Audio/                       → Audio explainer
 ├── code/
 │   ├── ai_model_development/                   → CNN vs. ViT notebook
 │   └── deep_learning_resource_optimization/    → LoRA/Quantization/ONNX notebook
 ├── notes/
-│   └── README.md            → Full detailed session notes (all 3 sessions)
+│   └── README.md                    → Full detailed session notes (all 3 sessions)
 └── resources/
-    └── README.md            → Curated research paper references
+    └── README.md                    → Curated research paper references
 ```
 
-- **[`slides/`](slides)** — Original presentation decks for all three sessions.
+- **[`lecture material/`](lecture material)** — Slides (PDF & PPTX), video walkthroughs, and audio explainer for all three sessions.
 - **[`code/`](code)** — Hands-on Jupyter notebooks with full working code.
 - **[`notes/README.md`](notes/README.md)** — In-depth written notes covering every session, topic by topic.
 - **[`resources/README.md`](resources/README.md)** — Curated external research papers on AI in remote sensing.
@@ -74,7 +80,7 @@ AI-DeepLearning-FDP-2026/
 
 Prefer watching or listening over reading slides? Every session has an AI-generated video walkthrough, and Session 1 also has a standalone audio explainer.
 
-📺 **[Browse all videos & audio →](slides/README.md)**
+📺 **[Browse all slides, videos & audio →](<lecture material/README.md>)**
 
 ## Getting Started
 
