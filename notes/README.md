@@ -12,13 +12,13 @@
 | 2 | Day 4 | 30 Jul 2026 | 09:30 AM – 11:15 AM | [Hands-on Workshop: AI Model Development using Python](#-session-2-ai-model-development-using-python) | Hands-on / Notebook |
 | 3 | Day 4 | 30 Jul 2026 | 11:30 AM – 01:00 PM | [Deep Learning Applications for Resource Optimization](#-session-3-deep-learning-applications-for-resource-optimization) | Hands-on / Notebook |
 
-📁 Related files: [`slides/`](../slides) · [`code/`](../code) · [`resources/`](../resources)
+📁 Related files: [`lecture material/Slides-PDF/`](../lecture%20material/Slides-PDF/) · [`code/`](../code) · [`resources/`](../resources)
 
 ---
 
 ## 🌍 Session 1: Machine Learning Techniques for Environmental and Resource Monitoring
 
-**Slide deck:** [`Machine Learning for Environmental & Resource Monitoring.pptx`](../slides/Machine%20Learning%20for%20Environmental%20%26%20Resource%20Monitoring.pptx) · **55 slides · 9 modules**
+**Slide deck (PDF):** [`Machine Learning for Environmental & Resource Monitoring.pdf`](../lecture%20material/Slides-PDF/Machine%20Learning%20for%20Environmental%20%26%20Resource%20Monitoring.pdf) · **55 slides · 9 modules**
 
 ### 🎯 What This Session Covers
 
