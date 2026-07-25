@@ -89,8 +89,11 @@ AI-DeepLearning-FDP-2026/
 ## Contact
 
 **Abhishek Kumar Shukla**
-📧 Personal: [abhishekshukla2421@gmail.com](mailto:abhishekshukla2421@gmail.com) · 🏢 Work: [abhishek.shukla@uniconvergetech.in](mailto:abhishek.shukla@uniconvergetech.in)
-💼 [LinkedIn](https://www.linkedin.com/in/researcher-abhishek-kumar-shukla/) · 🎓 [Google Scholar](https://scholar.google.com/citations?user=e3AeGHAAAAAJ&hl=en) · 🆔 [ORCID](https://orcid.org/0009-0002-3415-2718)
+📧 Personal: [abhishekshukla2421@gmail.com](mailto:abhishekshukla2421@gmail.com)
+🏢 Work: [abhishek.shukla@uniconvergetech.in](mailto:abhishek.shukla@uniconvergetech.in)
+💼 [LinkedIn](https://www.linkedin.com/in/researcher-abhishek-kumar-shukla/)
+🎓 [Google Scholar](https://scholar.google.com/citations?user=e3AeGHAAAAAJ&hl=en)
+🆔 [ORCID](https://orcid.org/0009-0002-3415-2718)
 
 ---
 *These materials are shared for academic and educational use by FDP participants.*
