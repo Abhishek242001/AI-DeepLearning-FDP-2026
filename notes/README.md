@@ -146,7 +146,7 @@ Six families, each detecting a *different definition* of "abnormal":
 
 ## 🤖 Session 2: AI Model Development using Python
 
-**Slide deck:** [`AI for Environmental Monitoring using Satellite Images CNN vs Vision Transformer.pptx`](../slides/AI%20for%20Environmental%20Monitoring%20using%20Satellite%20Images%20CNN%20vs%20Vision%20Transformer.pptx) · **50 slides**
+**Slide deck (PDF):** [`AI for Environmental Monitoring using Satellite Images CNN vs Vision Transformer.pdf`](../lecture%20material/Slides-PDF/AI%20for%20Environmental%20Monitoring%20using%20Satellite%20Images%20CNN%20vs%20Vision%20Transformer.pdf) · **50 slides**
 **Notebook:** [`AI_Model_Development_Workshop_LandCover_CNN.ipynb`](../code/ai_model_development/AI_Model_Development_Workshop_LandCover_CNN.ipynb) · **50 cells**
 
 ### 🎯 What This Session Covers
