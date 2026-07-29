@@ -2,6 +2,8 @@
 
 Two fully hands-on Jupyter notebooks used in the live workshop sessions. Both are self-contained — run top to bottom on Google Colab (GPU runtime recommended) or any local environment with a CUDA GPU.
 
+> ℹ️ The **Cloud Computing for AI** session (Day 2) doesn't have a notebook here — its hands-on component is a live walkthrough of the [Lightning.ai](https://lightning.ai) free-tier platform rather than a Jupyter notebook. See [`lecture material/README.md`](<../lecture material/README.md>) for its slides, and [`notes/README.md`](../notes/README.md#-session-1-cloud-computing-for-ai) for the full session notes.
+
 ---
 
 ## 📁 `ai_model_development/`
@@ -14,7 +16,7 @@ Builds and trains a **CNN** and a **Vision Transformer (ViT)** from scratch on t
 
 **Stack:** TensorFlow/Keras, NumPy, Matplotlib
 
-📖 Full topic-by-topic notes: [`notes/README.md` → Session 2](<../notes/README.md#-session-2-ai-model-development-using-python>)
+📖 Full topic-by-topic notes: [`notes/README.md` → Session 3](<../notes/README.md#-session-3-ai-model-development-using-python>)
 
 ---
 
@@ -28,7 +30,7 @@ Demonstrates the full model-efficiency stack live on GPT-2: **LoRA** fine-tuning
 
 **Stack:** PyTorch, Hugging Face `transformers`, `peft`, `optimum-onnx`, `onnxruntime`
 
-📖 Full topic-by-topic notes: [`notes/README.md` → Session 3](<../notes/README.md#-session-3-deep-learning-applications-for-resource-optimization>)
+📖 Full topic-by-topic notes: [`notes/README.md` → Session 4](<../notes/README.md#-session-4-deep-learning-applications-for-resource-optimization>)
 
 ---
 

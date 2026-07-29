@@ -8,21 +8,226 @@
 
 | # | Day | Date | Time | Session | Format |
 |---|---|---|---|---|---|
-| 1 | Day 3 | 29 Jul 2026 | 03:45 PM – 05:30 PM | [Machine Learning Techniques for Environmental and Resource Monitoring](#-session-1-machine-learning-techniques-for-environmental-and-resource-monitoring) | Lecture |
-| 2 | Day 4 | 30 Jul 2026 | 09:30 AM – 11:15 AM | [Hands-on Workshop: AI Model Development using Python](#-session-2-ai-model-development-using-python) | Hands-on / Notebook |
-| 3 | Day 4 | 30 Jul 2026 | 11:30 AM – 01:00 PM | [Deep Learning Applications for Resource Optimization](#-session-3-deep-learning-applications-for-resource-optimization) | Hands-on / Notebook |
+| 1 | Day 2 | 28 Jul 2026 | 02:00 PM – 03:30 PM | [Cloud Computing for AI](#-session-1-cloud-computing-for-ai) | Lecture + Hands-on |
+| 2 | Day 3 | 29 Jul 2026 | 03:45 PM – 05:30 PM | [Machine Learning Techniques for Environmental and Resource Monitoring](#-session-2-machine-learning-techniques-for-environmental-and-resource-monitoring) | Lecture |
+| 3 | Day 4 | 30 Jul 2026 | 09:30 AM – 11:15 AM | [Hands-on Workshop: AI Model Development using Python](#-session-3-ai-model-development-using-python) | Hands-on / Notebook |
+| 4 | Day 4 | 30 Jul 2026 | 11:30 AM – 01:00 PM | [Deep Learning Applications for Resource Optimization](#-session-4-deep-learning-applications-for-resource-optimization) | Hands-on / Notebook |
 
 📁 Related files: [`lecture material/Slides-PDF/`](../lecture%20material/Slides-PDF/) · [`code/`](../code) · [`resources/`](../resources)
 
 ---
 
-## 🌍 Session 1: Machine Learning Techniques for Environmental and Resource Monitoring
+## ☁️ Session 1: Cloud Computing for AI
+
+**Slide deck (PDF):** [`Cloud Computing for AI.pdf`](<../lecture material/Slides-PDF/Cloud Computing for AI.pdf>) · **18 slides**
+
+### 🎯 What This Session Covers
+
+A ground-up tour of cloud computing framed specifically around AI workloads — starting from the NIST definition of cloud computing and building up to a real production case study and a hands-on introduction to a free GPU platform. Where the later sessions go deep on specific model architectures, this session is the **infrastructure layer underneath all of them** — the "where does the compute for all this actually come from" question.
+
+### 🗺️ Session Roadmap (3 phases, 9 parts)
+
+| Phase | Part | Focus |
+|---|---|---|
+| **Phase 1 · Foundations** | 01 · Cloud Fundamentals | NIST definition, characteristics, evolution |
+| | 02 · Service & Deployment Models | IaaS, PaaS, SaaS · Public, Private, Hybrid, Multi-Cloud |
+| | 03 · Cloud Providers for AI | AWS, GCP, Azure, IBM compared |
+| **Phase 2 · Infrastructure** | 04 · GPU / TPU Computing | Specialized high-performance hardware on-demand |
+| | 05 · Cloud AI/ML Platforms | SageMaker, Vertex AI, Azure ML Studio |
+| | 06 · Storage & Data Services | S3, data lakes, managed databases, feature stores |
+| **Phase 3 · Operations** | 07 · Training & Deployment | Distributed training, containerized serving, edge–cloud hybrid |
+| | 08 · MLOps in the Cloud | CI/CD pipelines, versioning, drift monitoring |
+| | 09 · Case Study & Hands-On | AWS AI-search case study + Lightning.ai free tier |
+
+### 1️⃣ What Is Cloud Computing?
+
+**NIST definition (the one to memorize):** a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources — networks, servers, storage, applications, services — that can be rapidly provisioned and released with minimal management effort.
+
+**The intuition the deck leans on:** cloud computing is the **electricity grid** for compute. You plug in and pay for usage instead of owning a power plant; with cloud you rent compute and pay per hour instead of owning a data center.
+
+**Three defining traits, restated simply:**
+- Delivered over the internet — resources are accessed remotely, never physically owned by the user
+- Pay only for what you use — OpEx instead of CapEx, no large upfront hardware investment
+- Elastic & self-service — provision compute, storage, or networking in minutes, scale up or down on demand
+
+### 2️⃣ Why AI Specifically Needs the Cloud
+
+Three reasons the deck gives for why modern AI workloads are an especially good fit for cloud infrastructure:
+
+| Reason | Detail |
+|---|---|
+| **Massive elastic compute** | Training large models needs thousands of GPU-hours; cloud lets you spin up 100 GPUs for a week then shut them down, instead of buying hardware that sits idle 90% of the time |
+| **Cost-efficient by design** | On-prem GPU clusters are cost-prohibitive for most institutions; pay-as-you-go pricing converts large CapEx into predictable OpEx |
+| **Specialized hardware access** | Cloud providers refresh GPU/TPU generations faster than most organizations can buy them — instant access to silicon like NVIDIA H100, Google TPU v5, AWS Trainium, with zero procurement overhead |
+
+### 3️⃣ From Data Centers to Cloud AI — A Four-Stage Evolution
+
+| Stage | Characteristics |
+|---|---|
+| **On-Prem** | Owned physical servers, fixed capacity & high CapEx, manual provisioning, hardware bought & racked |
+| **Virtualization** | Multiple VMs per host, higher hardware utilization, snapshot & migrate jobs, decouples OS from hardware |
+| **Cloud Onward** | AWS launches EC2 & S3, rented by the hour, self-service & elastic, compute as a utility |
+| **AI Cloud Onward** | AlexNet sparks the AI boom, GPU/TPU cloud instances, custom silicon chips, cloud built specifically for AI |
+
+**Key milestone flagged in the deck:** the 2012 deep-learning breakthrough (AlexNet) is what triggered cloud providers to pivot rapidly toward AI-optimized hardware — the AI-cloud era didn't exist before this.
+
+### 4️⃣ NIST's Five Essential Characteristics — with an AI Angle on Each
+
+| # | Characteristic | AI-Specific Angle |
+|---|---|---|
+| 1 | On-Demand Self-Service | A data scientist provisions a GPU instance in minutes — no IT ticket, no approval step |
+| 2 | Broad Network Access | Models, datasets, and APIs reachable from anywhere — laptops, phones, edge devices |
+| 3 | Resource Pooling | Multi-tenancy — multiple customers share physical infrastructure, dynamically assigned |
+| 4 | Rapid Elasticity | **AI angle: training clusters** — auto-scale from 1 to 64 GPUs in minutes during a job, then back to zero when training ends |
+| 5 | Measured Service | **AI angle: metered GPU-hours** — billing is metered precisely (GPU-hours, storage-GB, API calls); you pay only for what you consumed |
+
+### 5️⃣ Service Models: IaaS · PaaS · SaaS
+
+**Framing:** as you move IaaS → PaaS → SaaS, you gain convenience but lose control. Each layer has a natural AI use case.
+
+| Model | You Manage | Provider Manages | AI Example |
+|---|---|---|---|
+| **IaaS** (most control) | OS + software | Only physical hardware | Renting a raw GPU VM (e.g., AWS EC2 P4 instance) and installing your own PyTorch/TensorFlow stack from scratch |
+| **PaaS** (balanced) | Your code + data | Provisioning, scaling, orchestration, runtime | Amazon SageMaker or Google Vertex AI — managed notebooks, distributed training jobs, one-click endpoints |
+| **SaaS** (most convenient) | Nothing | Everything | A ready-made AI assistant like ChatGPT, or a hosted document-intelligence API — you only call it |
+
+**Teaching point from the deck:** more convenience always means less control — pick the layer that matches your team's skills and use case, not the "most advanced-sounding" option.
+
+### 6️⃣ Deployment Models: Public · Private · Hybrid · Multi-Cloud
+
+| Model | Trade-off |
+|---|---|
+| **Public Cloud** | Lowest cost. Shared infrastructure (AWS/Azure/GCP), multi-tenant, billed by usage, no upfront commitment. *Pro:* cheapest, fastest to start. *Con:* least control, shared tenancy. |
+| **Private Cloud** | Full control. Dedicated infrastructure for one organization — required for highly sensitive AI data (e.g., healthcare, defense). *Pro:* max control, compliance-friendly. *Con:* expensive, slower to scale. |
+| **Hybrid Cloud** | Balanced. Mix of public + private — train models in public cloud, keep sensitive data on private infrastructure. Common in regulated industries. *Pro:* best of both worlds. *Con:* network & data-flow complexity. |
+| **Multi-Cloud** | No lock-in. More than one public cloud — e.g., AWS for storage, GCP for a specific AI API. *Pro:* avoids vendor lock-in. *Con:* higher operational complexity. |
+
+### 7️⃣ Key Cloud Providers for AI
+
+**Framing:** there's no single "best" provider — the right choice depends on existing infrastructure, budget, compliance needs, and team familiarity.
+
+| Provider | Positioning | Key AI Assets |
+|---|---|---|
+| **Amazon Web Services** | Industry leader, deepest catalog | SageMaker (end-to-end ML), S3/EC2/Lambda ecosystem, custom Trainium/Inferentia silicon |
+| **Google Cloud Platform** | Research-grade ML, TensorFlow-native | Vertex AI (unified AutoML + custom training), exclusive TPU pods, BigQuery + ML integration |
+| **Microsoft Azure** | Enterprise integration, OpenAI partnership | Azure ML Studio (visual designer), exclusive hosted OpenAI models, Azure DevOps MLOps |
+| **IBM Cloud** | Hybrid & Watson, regulated industries | Watson AI services (NLP/speech/vision), Red Hat OpenShift hybrid, quantum-safe security |
+
+### 8️⃣ GPU / TPU Computing in the Cloud
+
+**Why specialized hardware matters — CPU vs. GPU vs. TPU:**
+
+| Hardware | Processing Style | Best For |
+|---|---|---|
+| **CPU** | Sequential — a handful of powerful cores | General tasks; slow for the matrix multiplications at the heart of neural networks |
+| **GPU** | Thousands of parallel cores | Massively parallel — ideal for deep-learning matrix multiplies; originally built for graphics, now the AI workhorse |
+| **TPU** | Custom tensor silicon | Google-built chips purpose-designed for tensor ops — highest throughput for compatible workloads |
+
+**Cloud-specific cost lever — Spot / Preemptible Instances:** discounted, interruptible GPU access for non-urgent jobs, **60–90% cheaper than on-demand**. The trade-off is possible mid-job interruption, which is why checkpointing (covered in Part 07) matters.
+
+### 9️⃣ Cloud AI/ML Platforms
+
+All three platforms below abstract away infrastructure so teams focus on data and models instead of server provisioning:
+
+| Platform | Provider | What It Is | Key Features |
+|---|---|---|---|
+| **Amazon SageMaker** | AWS | End-to-end ML lifecycle — labeling, distributed training, hyperparameter tuning, production monitoring | Built-in algorithms & custom frameworks · managed notebooks & training jobs · automatic model tuning · one-click endpoint deployment |
+| **Google Vertex AI** | Google Cloud | Unifies AutoML (no-code) with custom training | AutoML for tabular/image/text/video · custom training with PyTorch/TF/JAX · BigQuery & Feature Store integration · Model Registry & Endpoints |
+| **Azure ML Studio** | Microsoft Azure | Visual pipeline designer + code-first notebooks | Visual designer + code notebooks · automated ML & hyperparameter tuning · Azure DevOps native CI/CD · Responsible AI dashboard built-in |
+
+### 🔟 Storage & Data Services for AI
+
+The data layer feeds every ML pipeline — from raw ingestion through feature engineering to model artifacts:
+
+| Layer | Purpose | Examples |
+|---|---|---|
+| **Object Storage** | Unstructured data at massive scale, low cost/GB — images, video, audio, raw text | Amazon S3, Google Cloud Storage, Azure Blob |
+| **Data Lakes** | Centralized repositories holding raw data in native format until needed | AWS Lake Formation, Delta Lake, Apache Iceberg |
+| **Managed Databases** | Structured/relational data feeding feature-engineering pipelines; provider handles scaling | Amazon RDS, Cloud SQL, Azure SQL |
+| **Feature Stores** | Centralized repository ensuring the same engineered feature definitions are used globally | SageMaker Feature Store, Feast, Vertex Feature Store |
+
+### 1️⃣1️⃣ Cloud-Based Model Training
+
+Three techniques that turn weeks of single-machine training into hours:
+
+- **Distributed Training** — split a job across multiple GPUs/nodes. Two strategies: **data parallelism** (same model, different data shards) and **model parallelism** (model itself split across devices). Scales roughly linearly with GPU count.
+- **Auto-Scaling Clusters** — nodes are added/removed automatically based on training-job demand; a 64-GPU job spins up only for the run, then drops to zero. You never pay for idle capacity between jobs.
+- **Spot Instances** — discounted, interruptible compute for non-time-critical jobs; up to 90% cost reduction, at the cost of possible mid-job interruption, handled via checkpointing.
+
+### 1️⃣2️⃣ Cloud-Based Model Deployment (Inference & Serving)
+
+| Pattern | What It Does |
+|---|---|
+| **Model Serving (API Endpoints)** | Trained model exposed via a REST or WebSocket API endpoint so applications can send data and get predictions back |
+| **Containers & Kubernetes** | Models packaged in Docker containers for consistent deployment across dev/test/prod; Kubernetes orchestrates and auto-scales inference workloads based on request volume |
+| **Edge–Cloud Hybrid Inference** | Lightweight inference runs on edge devices (phones, cameras, IoT) for ultra-low latency, while heavier/batch processing happens in the cloud |
+
+**The general pattern the deck names explicitly:** a containerized model behind an API, auto-scaled by request load — this is the *exact same shape* used in the Section 9 case study below.
+
+### 1️⃣3️⃣ MLOps in the Cloud
+
+Applying DevOps principles (CI/CD, automation, monitoring) to the ML lifecycle — without this, models become "science projects" that never reliably reach production.
+
+| Practice | What It Solves | Example Tools |
+|---|---|---|
+| **CI/CD for ML** | Automated testing and deployment of new model versions; every code change triggers tests, training, and controlled rollout | GitHub Actions, GitLab CI |
+| **Pipeline Automation** | Automates the full sequence from data preprocessing to deployment — retraining becomes reproducible at the push of a button | Kubeflow, Airflow |
+| **Model Versioning** | Tracks production models with full lineage back to training data; enables instant rollback if a new version underperforms | MLflow, Model Registry |
+| **Monitoring for Drift** | Detects when model performance degrades due to real-world data drift; triggers alerts and retraining cycles automatically | Evidently, SageMaker Model Monitor |
+
+### 1️⃣4️⃣ Case Study — AI Search Project, End-to-End on AWS
+
+A real production system walked through step by step: client uploads a video, sends a natural-language query, and gets the top 5 matching moments back in real time.
+
+| Step | What Happens |
+|---|---|
+| 1. Video Upload | Client sends video via REST API (`/upload_ai_search_video`) |
+| 2. Amazon S3 Storage | Video stored in an S3 bucket; access URL returned |
+| 3. WebSocket Connection | Client opens `/ws/ai_search/{id}`, sends `search_text` + video URL |
+| 4. Frame Extraction (OpenCV) | FPS-based smart batching — processes ~1 batch/sec, not every frame |
+| 5. AI Inference Model | Batch of frames + search text → matches with confidence scores |
+| 6. Top 5 Results Returned | Timestamps + confidence scores pushed back via WebSocket, earliest match first |
+
+**Why AWS, specifically, for this system:**
+- **S3 storage** — scalable, durable video storage at roughly $0.023/GB
+- **Co-location** — region-based deployment keeps storage and compute co-located for low latency
+- **EC2/GPU compute** — runs the FastAPI backend + AI inference with no owned servers
+
+**The reusable pattern the deck extracts from this case study:** object storage + compute + a real-time connection + an AI inference step — this same shape recurs across most production cloud-AI systems, not just video search.
+
+### 1️⃣5️⃣ Hands-On: Lightning.ai Free Tier
+
+The session's pivot from "watching a production AWS example" to "you build and deploy your own model, today, for free":
+
+| Feature | What It Gives You |
+|---|---|
+| **Free GPU Compute** | Free GPU-backed compute for training/experimentation — no cloud infrastructure to provision, no surprise bills |
+| **AI Studio Environments** | Pre-built, cloud-hosted dev environments that launch instantly in-browser — no local Python/CUDA/driver setup |
+| **Ready-Made Templates** | Templates for common AI workflows — fine-tuning a model, building an inference API, deploying a model-serving endpoint |
+| **Built for Learning** | Lowers the barrier from "learning about cloud AI" to "actually deploying a model," in a single session |
+
+### 💡 Key Takeaways (session's own summary)
+
+1. **Cloud is AI's compute backbone** — elastic, on-demand GPU/TPU access is what makes modern AI training affordable at all.
+2. **Every model is a trade-off** — IaaS/PaaS/SaaS and public/private/hybrid/multi-cloud each balance control, cost, and convenience differently; there's no universally "best" choice.
+3. **A repeatable pattern underlies production systems** — storage + compute + data pipeline + inference is the shape of nearly every production cloud-AI system, as shown concretely in the AI-search case study.
+4. **Free practice is real, not hypothetical** — Lightning.ai lets you start deploying models today with no budget required.
+
+### 🔭 Future Trends Flagged
+
+- **Edge–Cloud Convergence** — more inference moves to edge devices (phones, cameras, IoT) for low latency; the cloud increasingly specializes in training and heavier batch processing.
+- **Sustainable / Green AI** — providers are optimizing data centers for energy efficiency as AI's power demands grow; carbon-aware training is becoming standard practice.
+- **Serverless AI Inference** — pay-per-request model serving with zero server management; you invoke an endpoint and pay only for the milliseconds of compute used.
+
+---
+
+## 🌍 Session 2: Machine Learning Techniques for Environmental and Resource Monitoring
 
 **Slide deck (PDF):** [`Machine Learning for Environmental & Resource Monitoring.pdf`](../lecture%20material/Slides-PDF/Machine%20Learning%20for%20Environmental%20%26%20Resource%20Monitoring.pdf) · **55 slides · 9 modules**
 
 ### 🎯 What This Session Covers
 
-A broad, systems-level tour of how machine learning is applied across the entire environmental-monitoring pipeline — from raw satellite/IoT sensor data to deployed, production-grade decision-support systems. Unlike the two hands-on sessions, this is a **conceptual map** of the field: architectures, taxonomies, trade-offs, and real deployed case studies.
+A broad, systems-level tour of how machine learning is applied across the entire environmental-monitoring pipeline — from raw satellite/IoT sensor data to deployed, production-grade decision-support systems. Unlike the hands-on sessions, this is a **conceptual map** of the field: architectures, taxonomies, trade-offs, and real deployed case studies.
 
 ### 🧭 The 9 Modules
 
@@ -95,7 +300,7 @@ Labeled Earth Observation data is estimated to be **~100× harder to produce** t
 3. **Foundation Models for EO** — general-purpose EO backbones (analogous to GPT/BERT for language) replacing task-specific CNNs trained from scratch each time.
 
 #### 6️⃣ Vision Architectures Deep Dive
-- **CNN vs. ViT** — different inductive biases: CNNs assume locality/translation-invariance (via convolution); ViTs make no such assumption and instead *learn* spatial relationships via self-attention — more data-hungry but more flexible. *(This exact comparison is explored hands-on in [Session 2](#-session-2-ai-model-development-using-python).)*
+- **CNN vs. ViT** — different inductive biases: CNNs assume locality/translation-invariance (via convolution); ViTs make no such assumption and instead *learn* spatial relationships via self-attention — more data-hungry but more flexible. *(This exact comparison is explored hands-on in [Session 3](#-session-3-ai-model-development-using-python).)*
 - **Segmentation architectures** (5 families for per-pixel land-cover mapping):
   - **U-Net** — encoder-decoder with skip connections; originally built for medical imaging (2015), still dominates EO segmentation in 2025 due to its efficiency on limited labeled data.
   - **DeepLab** — dilated ("atrous") convolutions + pyramid pooling to capture multi-scale context without losing resolution.
@@ -144,7 +349,7 @@ Six families, each detecting a *different definition* of "abnormal":
 
 ---
 
-## 🤖 Session 2: AI Model Development using Python
+## 🤖 Session 3: AI Model Development using Python
 
 **Slide deck (PDF):** [`AI for Environmental Monitoring using Satellite Images CNN vs Vision Transformer.pdf`](../lecture%20material/Slides-PDF/AI%20for%20Environmental%20Monitoring%20using%20Satellite%20Images%20CNN%20vs%20Vision%20Transformer.pdf) · **50 slides**
 **Notebook:** [`AI_Model_Development_Workshop_LandCover_CNN.ipynb`](../code/ai_model_development/AI_Model_Development_Workshop_LandCover_CNN.ipynb) · **50 cells**
@@ -238,13 +443,13 @@ Load → Decode → Normalize `[0,1]` → **Augment** (train only: horizontal/ve
 
 ---
 
-## ⚡ Session 3: Deep Learning Applications for Resource Optimization
+## ⚡ Session 4: Deep Learning Applications for Resource Optimization
 
 **Slide deck (PDF):** [`Deep Learning Applications for Resource Optimization.pdf`](../lecture%20material/Slides-PDF/Deep%20Learning%20Applications%20for%20Resource%20Optimization.pdf) · **58 slides**
 **Notebook:** [`Deep_Learning_Resource_Optimization_Workshop.ipynb`](../code/deep_learning_resource_optimization/Deep_Learning_Resource_Optimization_Workshop.ipynb) · **45 cells**
 
 ### 🎯 What This Session Covers
-Where Session 2 asked "which architecture is more accurate," this session asks a different question entirely: **"how do we make an already-good model cheap enough to train and deploy?"** It covers the full efficiency stack — parameter-efficient fine-tuning, numeric precision, quantization, and ONNX export — then demonstrates all four **live**, with real measured before/after numbers on GPT-2.
+Where Session 3 asked "which architecture is more accurate," this session asks a different question entirely: **"how do we make an already-good model cheap enough to train and deploy?"** It covers the full efficiency stack — parameter-efficient fine-tuning, numeric precision, quantization, and ONNX export — then demonstrates all four **live**, with real measured before/after numbers on GPT-2.
 
 ### 🗺️ Session Roadmap (8 parts)
 
@@ -346,7 +551,7 @@ Senior AI Developer, UniConverge Technologies Pvt. Ltd.
 ## 📌 How to Use This Repository
 
 1. Start with the **session notes above** for a fast conceptual overview of each topic.
-2. Open the matching notebook in `code/` to run the hands-on exercises yourself (Google Colab with a GPU runtime is recommended for Sessions 2 & 3).
+2. Open the matching notebook in `code/` to run the hands-on exercises yourself (Google Colab with a GPU runtime is recommended for Sessions 3 & 4).
 3. Refer to the PDF slide decks in `lecture material/Slides-PDF/` for the complete visual explanations, diagrams, and speaker notes.
 4. See [`resources/README.md`](../resources/README.md) for supporting research papers on AI in remote sensing.
 
